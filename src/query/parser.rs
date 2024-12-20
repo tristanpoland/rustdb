@@ -398,10 +398,10 @@ impl Parser {
                         space1,
                     )),
                     tuple((
-                        self.parse_identifier,
+                        |i| self.parse_identifier(i),
                         delimited(
                             char('('),
-                            self.parse_identifier,
+                            |i| self.parse_identifier(i),
                             char(')'),
                         ),
                     )),
@@ -423,7 +423,7 @@ impl Parser {
                     terminated(
                         separated_list0(
                             tuple((char(','), space0)),
-                            self.parse_identifier,
+                            |input| self.parse_identifier(input),
                         ),
                         char(')'),
                     ),
