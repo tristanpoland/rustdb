@@ -1,20 +1,19 @@
 use thiserror::Error;
-use std::io;
 
 #[derive(Error, Debug)]
 pub enum Error {
-    #[error("IO error: {0}")]
-    Io(#[from] io::Error),
-    
-    #[error("Parse error: {0}")]
-    Parse(String),
+    #[error("SQL syntax error: {0}")]
+    Syntax(String),
     
     #[error("Type error: {0}")]
     Type(String),
     
-    #[error("Query error: {0}")]
-    Query(String),
+    #[error("Connection error: {0}")]
+    Connection(String),
     
-    #[error("Storage error: {0}")]
-    Storage(String),
+    #[error("Execution error: {0}")]
+    Execution(String),
+    
+    #[error("Transaction error: {0}")]
+    Transaction(String),
 }
