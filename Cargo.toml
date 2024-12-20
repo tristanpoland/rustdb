@@ -12,3 +12,5 @@ bincode = "1.0"
 tokio = { version = "1.0", features = ["full"] }
 memmap2 = "0.9.5"
 parking_lot = "0.12"
+tempfile = "3.14.0"
+regex = "1.11.1"
