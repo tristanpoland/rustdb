@@ -3,6 +3,7 @@ pub mod types;
 pub mod storage;
 pub mod query;
 pub mod index;
+pub use storage::buffer_pool as buffer;
 
 use std::sync::Arc;
 use tokio::sync::RwLock;
